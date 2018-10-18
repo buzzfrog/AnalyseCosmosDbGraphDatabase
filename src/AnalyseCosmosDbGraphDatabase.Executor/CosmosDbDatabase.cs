@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using My = AnalyseCosmosDbGraphDatabase.Executor;
+using My = AnalyseCosmosDbGraphDatabase.Executor.Model;
 
 namespace AnalyseCosmosDbGraphDatabase.Executor
 {
@@ -72,7 +72,7 @@ namespace AnalyseCosmosDbGraphDatabase.Executor
                 
                 foreach (var partitionKeyStatistics in partitionKeyRangeStatistics.PartitionKeyStatistics)
                 {
-                    partitionInfo.PartitionKeyStatistics.Add(new PartitionKeyStatistics()
+                    partitionInfo.PartitionKeyStatistics.Add(new My.PartitionKeyStatistics()
                     {
                         PartitionKey = partitionKeyStatistics.PartitionKey.ToString(),
                         SizeInKB = partitionKeyStatistics.SizeInKB
