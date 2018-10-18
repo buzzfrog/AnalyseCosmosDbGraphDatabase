@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28016.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{BEF90DC2-FF2D-4011-ADF7-29C36CCBD330}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyseCosmosDbGraphDatabase", "src\AnalyseCosmosDbGraphDatabase\AnalyseCosmosDbGraphDatabase.csproj", "{253E5FA0-4DB4-4B2E-8B96-E84E65C91FF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{CDB59A88-DB74-4185-960F-1F24A2B26C8F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyseCosmosDbGraphDatabase.Test", "test\AnalyseCosmosDbGraphDatabase.Test\AnalyseCosmosDbGraphDatabase.Test.csproj", "{D6039DF0-BEFA-41B2-BBBD-DD6F697BF248}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AnalyseCosmosDbGraphDatabase.Executor", "src\AnalyseCosmosDbGraphDatabase.Executor\AnalyseCosmosDbGraphDatabase.Executor.csproj", "{D25B6348-6B38-433A-BB8B-368209B0C7FB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD183DFE-ABD2-48EF-A205-B9BA0171C7B0}"
+	ProjectSection(SolutionItems) = preProject
+		CONTRIBUTING.md = CONTRIBUTING.md
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{253E5FA0-4DB4-4B2E-8B96-E84E65C91FF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{253E5FA0-4DB4-4B2E-8B96-E84E65C91FF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{253E5FA0-4DB4-4B2E-8B96-E84E65C91FF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{253E5FA0-4DB4-4B2E-8B96-E84E65C91FF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6039DF0-BEFA-41B2-BBBD-DD6F697BF248}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6039DF0-BEFA-41B2-BBBD-DD6F697BF248}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6039DF0-BEFA-41B2-BBBD-DD6F697BF248}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6039DF0-BEFA-41B2-BBBD-DD6F697BF248}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D25B6348-6B38-433A-BB8B-368209B0C7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D25B6348-6B38-433A-BB8B-368209B0C7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D25B6348-6B38-433A-BB8B-368209B0C7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D25B6348-6B38-433A-BB8B-368209B0C7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{253E5FA0-4DB4-4B2E-8B96-E84E65C91FF0} = {BEF90DC2-FF2D-4011-ADF7-29C36CCBD330}
+		{D6039DF0-BEFA-41B2-BBBD-DD6F697BF248} = {CDB59A88-DB74-4185-960F-1F24A2B26C8F}
+		{D25B6348-6B38-433A-BB8B-368209B0C7FB} = {BEF90DC2-FF2D-4011-ADF7-29C36CCBD330}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8C37E8B5-ACA3-49BB-83F3-C9A83A56563A}
+	EndGlobalSection
+EndGlobal
