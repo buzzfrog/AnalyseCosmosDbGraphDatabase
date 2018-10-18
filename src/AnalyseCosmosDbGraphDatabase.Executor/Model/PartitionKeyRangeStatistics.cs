@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AnalyseCosmosDbGraphDatabase.Executor
+namespace AnalyseCosmosDbGraphDatabase.Executor.Model
 {
     public class PartitionKeyRangeStatistics
     {

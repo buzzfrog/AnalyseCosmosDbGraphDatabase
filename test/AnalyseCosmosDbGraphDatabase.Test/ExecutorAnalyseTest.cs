@@ -1,5 +1,6 @@
 ﻿using AnalyseCosmosDbGraphDatabase.Executor;
 using AnalyseCosmosDbGraphDatabase.Executor.Interface;
+using AnalyseCosmosDbGraphDatabase.Executor.Model;
 using Moq;
 using System.Collections.Generic;
 using System.Threading.Tasks;

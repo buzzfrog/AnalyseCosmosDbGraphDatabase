@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 using Gremlin.Net;
-using My = AnalyseCosmosDbGraphDatabase.Executor;
+using My = AnalyseCosmosDbGraphDatabase.Executor.Model;
 
 namespace AnalyseCosmosDbGraphDatabase.Executor.Interface
 {

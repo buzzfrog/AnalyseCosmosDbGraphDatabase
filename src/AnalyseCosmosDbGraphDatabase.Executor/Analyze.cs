@@ -1,4 +1,5 @@
 ﻿using AnalyseCosmosDbGraphDatabase.Executor.Interface;
+using AnalyseCosmosDbGraphDatabase.Executor.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
