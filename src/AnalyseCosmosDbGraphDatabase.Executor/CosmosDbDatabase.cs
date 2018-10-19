@@ -1,4 +1,5 @@
 ﻿using AnalyseCosmosDbGraphDatabase.Executor.Interface;
+using AnalyseCosmosDbGraphDatabase.Executor.Model;
 using Microsoft.Azure.Documents;
 using Microsoft.Azure.Documents.Client;
 using Microsoft.Azure.Documents.Linq;
@@ -94,6 +95,63 @@ namespace AnalyseCosmosDbGraphDatabase.Executor
                     collectionInfo.UserUsage,
                     collectionInfo.CurrentResourceQuotaUsage,
                     partitionInfoList);
+        }
+
+        public async Task<IndexInformation> GetIndexInfoAsync()
+        {
+            ResourceResponse<DocumentCollection> collectionInfo = 
+                await _documentClient.ReadDocumentCollectionAsync(
+                    UriFactory.CreateDocumentCollectionUri(_database, _collection));
+
+            var indexingPolicy = collectionInfo.Resource.IndexingPolicy;
+
+            var indexInfo = new IndexInformation()
+            {
+                Automatic = indexingPolicy.Automatic,
+                IndexingMode = indexingPolicy.IndexingMode.ToString(),
+                IncludedPaths = new List<IndexPath>(),
+                ExcludedPaths = new List<IndexPath>()
+            };
+
+            foreach (var includedPath in indexingPolicy.IncludedPaths)
+            {
+                indexInfo.IncludedPaths.Add(FillIndexInformation(includedPath));
+            }
+            foreach (var excludedPath in indexingPolicy.ExcludedPaths)
+            { 
+                indexInfo.ExcludedPaths.Add(new IndexPath() { Path = excludedPath.Path });
+            }
+
+            return indexInfo;
+        }
+
+        private IndexPath FillIndexInformation(IncludedPath includedPath)
+        {
+            var ip = new IndexPath() { Path = includedPath.Path, Indexes = new List<My.Index>() };
+            foreach (var ind in includedPath.Indexes)
+            {
+                var index = new My.Index() { Kind = ind.Kind.ToString() };
+                switch (ind)
+                {
+                    case HashIndex hi:
+                        index.DataType = hi.DataType.ToString();
+                        index.Precision = hi.Precision;
+                        break;
+                    case RangeIndex ri:
+                        index.DataType = ri.DataType.ToString();
+                        index.Precision = ri.Precision;
+                        break;
+                    case SpatialIndex si:
+                        index.DataType = si.DataType.ToString();
+                        break;
+                    default:
+                        index.DataType = "unknown";
+                        break;
+                }
+                ip.Indexes.Add(index);
+            }
+
+            return ip;
         }
     }
 }

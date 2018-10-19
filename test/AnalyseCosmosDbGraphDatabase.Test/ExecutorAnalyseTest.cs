@@ -57,7 +57,7 @@ namespace AnalyseCosmosDbGraphDatabase.Test.Executor
                 long.MaxValue - 1008,
                 long.MaxValue - 1009,
                 currentResourceQuotaUsage,
-                (List<PartitionKeyRangeStatistics>) null)));
+                (List<PartitionKeyRangeStatistics>)null)));
 
             var analyze = new Analyze(database.Object);
             var result = analyze.GetCollectionInfoAsync().GetAwaiter().GetResult();
@@ -66,5 +66,32 @@ namespace AnalyseCosmosDbGraphDatabase.Test.Executor
             Assert.Equal(40014370, result.documentsCount);
         }
 
+        [Fact]
+        public void GetIndexInfoAsync_return_pathsinformation()
+        {
+            var indexInfo = new IndexInformation()
+            {
+                Automatic = true,
+                IndexingMode = "lazy",
+                IncludedPaths = new List<IndexPath>()
+                {
+                    new IndexPath()
+                    {
+                        Path = "/path1", Indexes = new List<Index>()
+                        {
+                            new Index { DataType = "String", Kind = "Range", Precision = -1 }
+                        }
+                    }
+                }
+            };
+
+            var database = new Mock<IDatabase>();
+            database.Setup(x => x.GetIndexInfoAsync()).Returns(Task.FromResult((indexInfo)));
+
+            var analyze = new Analyze(database.Object);
+            var result = analyze.GetIndexInfoAsync().GetAwaiter().GetResult();
+
+            Assert.Single(result.IncludedPaths);
+        }
     }
 }
