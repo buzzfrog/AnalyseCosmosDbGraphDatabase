@@ -63,5 +63,10 @@ namespace AnalyseCosmosDbGraphDatabase.Executor
                     Convert.ToInt64(entities["collectionSize"]));
 
         }
+
+        public async Task<IndexInformation> GetIndexInfoAsync()
+        {
+            return await _database.GetIndexInfoAsync();
+        }
     }
 }

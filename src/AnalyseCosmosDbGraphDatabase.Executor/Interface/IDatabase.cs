@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
+using AnalyseCosmosDbGraphDatabase.Executor.Model;
 using Gremlin.Net;
 using My = AnalyseCosmosDbGraphDatabase.Executor.Model;
 
@@ -24,5 +25,7 @@ namespace AnalyseCosmosDbGraphDatabase.Executor.Interface
             string currentResourceQuotaUsage,
             List<My.PartitionKeyRangeStatistics> partitionInfoList
             )> GetCollectionInfoAsync();
+
+        Task<IndexInformation> GetIndexInfoAsync();
     }
 }
