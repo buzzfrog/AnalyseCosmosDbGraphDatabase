@@ -37,6 +37,15 @@ Documents: 40 014 370,00 (Number of documents (nodes/edges) in the collection
 -------------------------------------------------------------------------------------------------------------------
 | 0               | 1988031             | 3769531    | ["bbb6"] 149288kb, ["ddd14"] 149288kb, ["ddd13"] 149288kb  |
 -------------------------------------------------------------------------------------------------------------------
+
+Indexing Mode: Consistent
+Index Automatic: True
+Included Paths:
+        Path: /*
+                Range Number -1
+                Range String -1
+                Spatial Point
+Excluded Paths:
 ```
 ## Resources
 - [ResourceResponse](https://docs.microsoft.com/en-us/dotnet/api/microsoft.azure.documents.client.resourceresponse-1?f1url=https%3A%2F%2Fmsdn.microsoft.com%2Fquery%2Fdev15.query%3FappId%3DDev15IDEF1%26l%3DEN-US%26k%3Dk(Microsoft.Azure.Documents.Client.ResourceResponse%601);k(SolutionItemsProject);k(DevLang-csharp)%26rd%3Dtrue&view=azure-dotnet)
