@@ -27,7 +27,7 @@ namespace AnalyseCosmosDbGraphDatabase
             Console.WriteLine("\n");
             var listData = new List<List<object>>();
             listData.Add(new List<object> { "Partition Range", "Number of Documents", "Size in KB", "Partitition Key Info" });
-            foreach (var partitionRangeInfo in info.partitionInfo)
+            foreach (var partitionRangeInfo in collectionInfo.partitionInfo)
             {
                 var row = new List<object> { partitionRangeInfo.PartitionKeyRangeId,
                     partitionRangeInfo.DocumentCount,
