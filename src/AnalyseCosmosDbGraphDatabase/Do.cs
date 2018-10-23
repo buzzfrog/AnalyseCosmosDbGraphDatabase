@@ -26,7 +26,7 @@ namespace AnalyseCosmosDbGraphDatabase
             // Partition Info
             Console.WriteLine("\n");
             var listData = new List<List<object>>();
-            listData.Add(new List<object> { "Partition Range", "Number of Documents", "Size in KB", "Partitition Key Info" });
+            listData.Add(new List<object> { "Partition Range", "Number of Documents", "Size in KB", "Partitition Key Info (max 3 will be shown)" });
             foreach (var partitionRangeInfo in info.partitionInfo)
             {
                 var row = new List<object> { partitionRangeInfo.PartitionKeyRangeId,
@@ -36,7 +36,7 @@ namespace AnalyseCosmosDbGraphDatabase
                 var column = new StringBuilder();
                 foreach (var partitionKeyInfo in partitionRangeInfo.PartitionKeyStatistics)
                 {
-                    column.Append($"{partitionKeyInfo.PartitionKey} {partitionKeyInfo.SizeInKB}, ");
+                    column.Append($"{partitionKeyInfo.PartitionKey} {partitionKeyInfo.SizeInKB}kb, ");
   
                 }
                 row.Add(column.ToString().TrimEnd(new[] { ',', ' ' }));
