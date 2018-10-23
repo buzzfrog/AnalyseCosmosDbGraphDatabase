@@ -1,4 +1,5 @@
 ﻿using AnalyseCosmosDbGraphDatabase.Executor.Interface;
+using AnalyseCosmosDbGraphDatabase.Executor.Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -61,6 +62,11 @@ namespace AnalyseCosmosDbGraphDatabase.Executor
                     Convert.ToInt64(entities["documentsSize"]),
                     Convert.ToInt64(entities["collectionSize"]));
 
+        }
+
+        public async Task<IndexInformation> GetIndexInfoAsync()
+        {
+            return await _database.GetIndexInfoAsync();
         }
     }
 }
